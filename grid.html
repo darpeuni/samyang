@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> display : grid </title>
+    <style>
+        /* 3단 */
+        .container {
+            display: grid;
+            grid-gap: 10px;
+            /* 1fr - fractional unit 분수단위 */
+            grid-template-columns: repeat(3, 1fr); /* 세개의 열 */
+        }
+
+        .container .item {
+            background-color: #ddd;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* div - division - 나눔 */
+        /* 2단 */
+        @media screen and (min-width:761px) and (max-width:1000px) {
+            .container {
+
+                grid-template-columns: repeat(2, 1fr); /* 두개의 열 */
+            }
+        }
+
+        /* 1단 */
+        @media screen and (max-width:760px) {
+            .container {
+
+                grid-template-columns: repeat(1, 1fr); /* 한개의 열 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .container>.item{$}*6 -->
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+
+</html>

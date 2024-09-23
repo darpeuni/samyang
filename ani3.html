@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, violet, skyblue);
+            font-family: "Abel", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .animated-text {
+            font-size: 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .animated-text span {
+            display: inline-block;
+            color: #fff;
+            font-size: 200px;
+            opacity: 0; /* 초기에 숨김 처리 */
+            animation: fadeIn 1s ease-in-out forwards; /* fadeIn 애니메이션 적용 */
+        }
+
+        /* fadeIn 애니메이션 정의 */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0; /* 시작할 때 투명도 0 */
+                transform: translateY(100%); /* 시작할 때 아래로 이동 */
+            }
+            50% {
+                opacity: 1; /* 중간에 투명도 1 */
+            }
+            100% {
+                opacity: 1; /* 끝날 때 투명도 1 유지 */
+                transform: translateY(0); /* 끝날 때 원래 위치로 이동 */
+            }
+        }
+
+        .text1 {
+            animation-delay: 0.5s; /* text1 애니메이션 지연 시간 설정 */
+        }
+
+        .text2 {
+            animation-delay: 1s; /* text2 애니메이션 지연 시간 설정 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="animated-text">
+        <span class="text1">Effect</span><br>
+        <span class="text2">Animation</span>
+    </div>
+
+</body>
+
+</html>
